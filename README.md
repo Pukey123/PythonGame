@@ -15,16 +15,18 @@ As well as a primary you will also have a secondary attribute. This you can comb
 Battle
 First Implementaion at battle will be just be with the cow.
 
-Animations 
+1. Animations 
   - Attacks
   - Stationary
   
-Damage System
+2. Damage System
+
 This will include health and damage
+
 Dodge/ Miss chances
   Dodge mechanic (direction based)
 
-Turns
+3. Turns
 Should be fairly simple to build.
 
 ##ToDo
@@ -49,6 +51,7 @@ Defeating monster drops egg for that monster and also essessce seed of its type 
 fire cow drops fire essence seed and cow egg.
 
 Current Types
+- Basic/ Base
 - Fire
 - Water
 - Earth
