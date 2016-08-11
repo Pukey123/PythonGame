@@ -18,25 +18,28 @@ badguys=[[640,100]]
 healthvalue=194
  
 # 3 - Load images
-player = pygame.image.load("resources/images/dude.png")
-grass = pygame.image.load("resources/images/grass.png")
-castle = pygame.image.load("resources/images/castle.png")
-arrow = pygame.image.load("resources/images/bullet.png")
-badguyimg1 = pygame.image.load("resources/images/badguy.png")
+rootImg = "resources/images/basic_game/"
+rootAud = "resources/audio/basic_game/"
+
+player = pygame.image.load(rootImg + "dude.png")
+grass = pygame.image.load(rootImg + "grass.png")
+castle = pygame.image.load(rootImg + "castle.png")
+arrow = pygame.image.load(rootImg + "bullet.png")
+badguyimg1 = pygame.image.load(rootImg + "badguy.png")
 badguyimg=badguyimg1
-healthbar = pygame.image.load("resources/images/healthbar.png")
-health = pygame.image.load("resources/images/health.png")
-gameover = pygame.image.load("resources/images/gameover.png")
-youwin = pygame.image.load("resources/images/youwin.png")
+healthbar = pygame.image.load(rootImg + "healthbar.png")
+health = pygame.image.load(rootImg + "health.png")
+gameover = pygame.image.load(rootImg + "gameover.png")
+youwin = pygame.image.load(rootImg + "youwin.png")
  
 # 3.1 - Load audio
-hit = pygame.mixer.Sound("resources/audio/explode.wav")
-enemy = pygame.mixer.Sound("resources/audio/enemy.wav")
-shoot = pygame.mixer.Sound("resources/audio/shoot.wav")
+hit = pygame.mixer.Sound(rootAud + "explode.wav")
+enemy = pygame.mixer.Sound(rootAud + "enemy.wav")
+shoot = pygame.mixer.Sound(rootAud + "shoot.wav")
 hit.set_volume(0.05)
 enemy.set_volume(0.05)
 shoot.set_volume(0.05)
-pygame.mixer.music.load('resources/audio/moonlight.wav')
+pygame.mixer.music.load(rootAud + 'moonlight.wav')
 # pygame.mixer.music.play(-1, 0.0)
 pygame.mixer.music.set_volume(0.25)
 
