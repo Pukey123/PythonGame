@@ -19,6 +19,7 @@
 __version__ = '0.9.2'
 
 import pygame
+# from pygame.tranform import scale
 import time
 import os
 
@@ -41,7 +42,7 @@ SE = SOUTHEAST = 'se'
 
 TIME_FUNC = lambda: int(time.time() * 1000)
 
-def getImagesFromSpriteSheet(filename, width=None, height=None, rows=None, cols=None, rects=None):
+def getImagesFromSpriteSheet(filename, width=None, height=None, rows=None, cols=None, rects=None, scale=None):
     """Loads several sprites from a single image file (a "spritesheet").
 
     One (and only one) of the following parameters should be specified:
@@ -71,6 +72,11 @@ def getImagesFromSpriteSheet(filename, width=None, height=None, rows=None, cols=
         raise ValueError('Only pass one set of args: width & height, rows & cols, *or* rects')
 
     sheetImage = pygame.image.load(filename)
+
+    #Alex Added
+    if (scale is not None):
+        #scale squarely
+        sheetImage = pygame.transform.scale(sheetImage, (sheetImage.get_width() * scale, sheetImage.get_height() * scale))
 
     rects = []
 

@@ -14,19 +14,21 @@ rootAud = "resources/audio/basic_game/"
 
 player = pygame.image.load(rootImg + "dude.png")
 grass = pygame.image.load(rootImg + "grass.png")
-castle = pygame.image.load(rootImg + "castle.png")
+castle = pygame.image.load(rootImg + "castle.png").convert_alpha()
 # cow = pygame.image.load("resources/images/animals/cow/cow_front.png") #subject to change
 
 
 
-#Used https://github.com/asweigart/pyganim/tree/master/examples
+# Used https://github.com/asweigart/pyganim/tree/master/examples
+# http://www.pygame.org/project-Pyganim+sprite+animation+module-2106-.html
 # for the sprite sheets
-images = pyganim.getImagesFromSpriteSheet(
+cows = pyganim.getImagesFromSpriteSheet(
     filename="resources/images/animals/cow/cow_front.png", 
-    rows=4, cols=2)
-frames = list(zip(images, [100] * len(images)))
-animObj = pyganim.PygAnimation(frames)
-animObj.play()
+    rows=4, cols=2,
+    scale=2)
+cframes = list(zip(cows, [100] * len(cows)))
+cowObj = pyganim.PygAnimation(cframes)
+cowObj.play()
 
 # 4 - keep looping through
 running = 1
@@ -38,9 +40,8 @@ while running:
         for y in range(height/grass.get_height()+1):
             screen.blit(grass,(x*100,y*100))   
 
-    animObj.blit(screen, (100, 50))
-
-    # screen.blit(cow, (100,100))
+    cowObj.blit(screen, (100, 50))
+    # screen.blit(castle, (100,100))
 
     # 7 - update the screen
     pygame.display.flip()
