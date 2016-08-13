@@ -30,6 +30,16 @@ cframes = list(zip(cows, [100] * len(cows)))
 cowObj = pyganim.PygAnimation(cframes)
 cowObj.play()
 
+cowsr = pyganim.getImagesFromSpriteSheet(
+    filename="resources/images/animals/cow/cow_rear.png", 
+    rows=3, cols=3,
+    scale=2)
+crframes = list(zip(cowsr, [100] * len(cowsr)))
+# crframes = crframes.pop()#remove blank frame
+print crframes
+cowrObj = pyganim.PygAnimation(crframes)
+cowrObj.play()
+
 # 4 - keep looping through
 running = 1
 while running:
@@ -40,7 +50,8 @@ while running:
         for y in range(height/grass.get_height()+1):
             screen.blit(grass,(x*100,y*100))   
 
-    cowObj.blit(screen, (100, 50))
+    cowObj.blit(screen, (200, 20))
+    cowrObj.blit(screen, (50, 200))
     # screen.blit(castle, (100,100))
 
     # 7 - update the screen
